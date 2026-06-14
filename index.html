@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Indian History Timeline Map</title>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <div id="map" aria-label="Timeline map"></div>
+
+      <section class="info-panel" aria-label="Timeline events">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">British expansion in India</p>
+            <h1>Indian History Timeline</h1>
+          </div>
+          <div class="point-count">
+            <strong id="visible-count">0</strong>
+            <span>points</span>
+          </div>
+        </div>
+
+        <div id="event-list" class="event-list"></div>
+      </section>
+
+      <section class="timeline-panel" aria-label="Time slider">
+        <div class="timeline-top">
+          <button id="step-back" class="icon-button" type="button" title="Previous year">
+            &#9664;
+          </button>
+          <button id="play-toggle" class="icon-button primary" type="button" title="Play">
+            &#9654;
+          </button>
+          <button id="step-forward" class="icon-button" type="button" title="Next year">
+            &#9654;
+          </button>
+
+          <div class="year-readout">
+            <span id="selected-year">1849</span>
+            <small id="year-range">1746 to 1849</small>
+          </div>
+
+          <div class="mode-toggle" aria-label="Timeline mode">
+            <button class="active" data-mode="cumulative" type="button">Up to</button>
+            <button data-mode="active" type="button">Active</button>
+          </div>
+        </div>
+
+        <input id="year-slider" type="range" min="1746" max="1849" value="1849" step="1" />
+      </section>
+
+      <section id="setup-warning" class="setup-warning" hidden>
+        <h2>Mapbox token needed</h2>
+        <p>
+          Open <strong>script.js</strong> and replace
+          <strong>PASTE_YOUR_MAPBOX_ACCESS_TOKEN_HERE</strong> with your Mapbox access token.
+        </p>
+      </section>
+
+      <section id="app-message" class="app-message" hidden></section>
+    </main>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="script.js?v=3"></script>
+  </body>
+</html>
